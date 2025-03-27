@@ -1,11 +1,11 @@
 {
-	"id": "sample-plugin",
-	"name": "Sample Plugin",
+	"id": "vibe-components",
+	"name": "Vibe Components",
 	"version": "1.0.0",
 	"minAppVersion": "0.15.0",
-	"description": "Demonstrates some of the capabilities of the Obsidian API.",
-	"author": "Obsidian",
-	"authorUrl": "https://obsidian.md",
-	"fundingUrl": "https://obsidian.md/pricing",
+	"description": "Your go-to for built-in, interactive UI components for Obsidian plugin developers. Preview, interact, and copy source code directly within Obsidian with a smooth vibe.",
+	"author": "Jay Bridge",
+	"authorUrl": "",
+	"fundingUrl": "",
 	"isDesktopOnly": false
 }

@@ -33,7 +33,7 @@
 // 假设你的插件提供了一个可以获取组件实例的方法
 import { Button } from 'obsidian-vibe-components';
 
-export class MyPlugin extends Plugin {
+export class VibeComponents extends Plugin {
   async onload() {
     const myButton = new Button({
       label: '点击我',
