@@ -5,7 +5,7 @@
 [![GitHub Release](https://img.shields.io/github/v/release/LIUBINfighter/obsidian-vibe-components?style=flat-square)](https://github.com/your-username/obsidian-vibe-components/releases)
 [![GitHub Issues](https://img.shields.io/github/issues/LIUBINfighter/obsidian-vibe-components?style=flat-square)](https://github.com/your-username/obsidian-vibe-components/issues)
 [![GitHub Stars](https://img.shields.io/github/stars/LIUBINfighter/obsidian-vibe-components?style=flat-square)](https://github.com/your-username/obsidian-vibe-components)
-
+![Obsidian Downloads](https://img.shields.io/badge/dynamic/json?logo=obsidian&color=%23483699&label=downloads&query=%24%5B%22vibe-components%22%5D.downloads&url=https%3A%2F%2Fraw.githubusercontent.com%2Fobsidianmd%2Fobsidian-releases%2Fmaster%2Fcommunity-plugin-stats.json)
 > Your go-to for built-in, interactive UI components for Obsidian plugin developers. Preview, interact, and copy source code directly within Obsidian with a smooth vibe.
 
 **✨ Features**
