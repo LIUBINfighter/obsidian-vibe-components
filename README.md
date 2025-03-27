@@ -1,94 +1,49 @@
-# Obsidian Sample Plugin
+# obsidian-vibe-components
 
-This is a sample plugin for Obsidian (https://obsidian.md).
+[![GitHub Release](https://img.shields.io/github/v/release/your-username/obsidian-vibe-components?style=flat-square)](https://github.com/your-username/obsidian-vibe-components/releases)
+[![GitHub Issues](https://img.shields.io/github/issues/your-username/obsidian-vibe-components?style=flat-square)](https://github.com/your-username/obsidian-vibe-components/issues)
+[![GitHub Stars](https://img.shields.io/github/stars/your-username/obsidian-vibe-components?style=flat-square)](https://github.com/your-username/obsidian-vibe-components)
 
-This project uses TypeScript to provide type checking and documentation.
-The repo depends on the latest plugin API (obsidian.d.ts) in TypeScript Definition format, which contains TSDoc comments describing what it does.
+> 为 Obsidian 插件开发者提供一套内置的可交互 UI 组件库，方便预览效果和复制代码。
 
-This sample plugin demonstrates some of the basic functionality the plugin API can do.
-- Adds a ribbon icon, which shows a Notice when clicked.
-- Adds a command "Open Sample Modal" which opens a Modal.
-- Adds a plugin setting tab to the settings page.
-- Registers a global click event and output 'click' to the console.
-- Registers a global interval which logs 'setInterval' to the console.
+**✨ 特性**
 
-## First time developing plugins?
+* **丰富的 UI 组件:** 提供各种常用的界面元素，例如按钮、输入框、下拉菜单、模态框等。
+* **交互式演示:** 每个组件都可以在 Obsidian 内部进行实时交互，方便开发者了解其行为和样式。
+* **源码查看:** 可以直接查看每个组件的实现代码，方便开发者学习和集成到自己的插件中。
+* **易于集成:** 设计简洁，方便其他插件开发者快速上手和使用。
+* **持续更新:** 计划不断增加新的组件和功能。
 
-Quick starting guide for new plugin devs:
+**📦 如何使用**
 
-- Check if [someone already developed a plugin for what you want](https://obsidian.md/plugins)! There might be an existing plugin similar enough that you can partner up with.
-- Make a copy of this repo as a template with the "Use this template" button (login to GitHub if you don't see it).
-- Clone your repo to a local development folder. For convenience, you can place this folder in your `.obsidian/plugins/your-plugin-name` folder.
-- Install NodeJS, then run `npm i` in the command line under your repo folder.
-- Run `npm run dev` to compile your plugin from `main.ts` to `main.js`.
-- Make changes to `main.ts` (or create new `.ts` files). Those changes should be automatically compiled into `main.js`.
-- Reload Obsidian to load the new version of your plugin.
-- Enable plugin in settings window.
-- For updates to the Obsidian API run `npm update` in the command line under your repo folder.
+1.  在 Obsidian 的社区插件中搜索 "obsidian-vibe-components" 并安装。
+2.  启用该插件。
+3.  在 Obsidian 中打开一个新的笔记。
+4.  使用特定的命令或视图（你需要在插件中实现）来浏览和交互组件。
+5.  在组件演示界面，你可以查看组件的实时效果和源代码。
 
-## Releasing new releases
+**⌨️ 如何为其他插件开发者使用这些组件**
 
-- Update your `manifest.json` with your new version number, such as `1.0.1`, and the minimum Obsidian version required for your latest release.
-- Update your `versions.json` file with `"new-plugin-version": "minimum-obsidian-version"` so older versions of Obsidian can download an older version of your plugin that's compatible.
-- Create new GitHub release using your new version number as the "Tag version". Use the exact version number, don't include a prefix `v`. See here for an example: https://github.com/obsidianmd/obsidian-sample-plugin/releases
-- Upload the files `manifest.json`, `main.js`, `styles.css` as binary attachments. Note: The manifest.json file must be in two places, first the root path of your repository and also in the release.
-- Publish the release.
+（在这里你需要详细说明其他开发者如何在自己的插件中引入和使用你的组件。这可能涉及到你的 API 设计、组件的命名规范、以及如何通过你的插件提供的接口来渲染这些组件。）
 
-> You can simplify the version bump process by running `npm version patch`, `npm version minor` or `npm version major` after updating `minAppVersion` manually in `manifest.json`.
-> The command will bump version in `manifest.json` and `package.json`, and add the entry for the new version to `versions.json`
+例如：
 
-## Adding your plugin to the community plugin list
+```typescript
+// 假设你的插件提供了一个可以获取组件实例的方法
+import { Button } from 'obsidian-vibe-components';
 
-- Check the [plugin guidelines](https://docs.obsidian.md/Plugins/Releasing/Plugin+guidelines).
-- Publish an initial version.
-- Make sure you have a `README.md` file in the root of your repo.
-- Make a pull request at https://github.com/obsidianmd/obsidian-releases to add your plugin.
+export class MyPlugin extends Plugin {
+  async onload() {
+    const myButton = new Button({
+      label: '点击我',
+      onClick: () => {
+        new Notice('按钮被点击了！');
+      }
+    });
 
-## How to use
+    // 假设你的插件提供了一个方法将组件渲染到某个元素
+    this.renderComponent(this.containerEl, myButton);
+  }
 
-- Clone this repo.
-- Make sure your NodeJS is at least v16 (`node --version`).
-- `npm i` or `yarn` to install dependencies.
-- `npm run dev` to start compilation in watch mode.
-
-## Manually installing the plugin
-
-- Copy over `main.js`, `styles.css`, `manifest.json` to your vault `VaultFolder/.obsidian/plugins/your-plugin-id/`.
-
-## Improve code quality with eslint (optional)
-- [ESLint](https://eslint.org/) is a tool that analyzes your code to quickly find problems. You can run ESLint against your plugin to find common bugs and ways to improve your code. 
-- To use eslint with this project, make sure to install eslint from terminal:
-  - `npm install -g eslint`
-- To use eslint to analyze this project use this command:
-  - `eslint main.ts`
-  - eslint will then create a report with suggestions for code improvement by file and line number.
-- If your source code is in a folder, such as `src`, you can use eslint with this command to analyze all files in that folder:
-  - `eslint .\src\`
-
-## Funding URL
-
-You can include funding URLs where people who use your plugin can financially support it.
-
-The simple way is to set the `fundingUrl` field to your link in your `manifest.json` file:
-
-```json
-{
-    "fundingUrl": "https://buymeacoffee.com"
+  // ... 其他方法
 }
-```
-
-If you have multiple URLs, you can also do:
-
-```json
-{
-    "fundingUrl": {
-        "Buy Me a Coffee": "https://buymeacoffee.com",
-        "GitHub Sponsor": "https://github.com/sponsors",
-        "Patreon": "https://www.patreon.com/"
-    }
-}
-```
-
-## API Documentation
-
-See https://github.com/obsidianmd/obsidian-api
