@@ -1,8 +1,8 @@
 # obsidian-vibe-components
 
-[![GitHub Release](https://img.shields.io/github/v/release/your-username/obsidian-vibe-components?style=flat-square)](https://github.com/your-username/obsidian-vibe-components/releases)
-[![GitHub Issues](https://img.shields.io/github/issues/your-username/obsidian-vibe-components?style=flat-square)](https://github.com/your-username/obsidian-vibe-components/issues)
-[![GitHub Stars](https://img.shields.io/github/stars/your-username/obsidian-vibe-components?style=flat-square)](https://github.com/your-username/obsidian-vibe-components)
+[![GitHub Release](https://img.shields.io/github/v/release/LIUBINfighter/obsidian-vibe-components?style=flat-square)](https://github.com/your-username/obsidian-vibe-components/releases)
+[![GitHub Issues](https://img.shields.io/github/issues/LIUBINfighter/obsidian-vibe-components?style=flat-square)](https://github.com/your-username/obsidian-vibe-components/issues)
+[![GitHub Stars](https://img.shields.io/github/stars/LIUBINfighter/obsidian-vibe-components?style=flat-square)](https://github.com/your-username/obsidian-vibe-components)
 
 > 为 Obsidian 插件开发者提供一套内置的可交互 UI 组件库，方便预览效果和复制代码。
 
