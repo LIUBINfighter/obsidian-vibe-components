@@ -20,33 +20,8 @@
 
 1.  Search for "obsidian-vibe-components" in the Obsidian community plugins and install it.
 2.  Enable the plugin.
-3.  Open a new note in Obsidian.
+3.  Click the robbin icon in Obsidian.
 4.  Use specific commands or views (which you will need to implement in your plugin) to browse and interact with the components.
 5.  In the component demonstration interface, you can view the real-time effect and source code of the components.
 
 **⌨️ How to Use These Components for Other Plugins**
-
-(Here you need to provide detailed instructions on how other developers can import and use your components in their own plugins. This might involve your API design, component naming conventions, and how to render these components through the interfaces your plugin provides.)
-
-For example:
-
-```typescript
-// Assuming your plugin provides a method to get component instances
-import { Button } from 'obsidian-vibe-components';
-
-export class MyPlugin extends Plugin {
-  async onload() {
-    const myButton = new Button({
-      label: 'Click Me',
-      onClick: () => {
-        new Notice('Button was clicked!');
-      }
-    });
-
-    // Assuming your plugin provides a method to render components to a specific element
-    this.renderComponent(this.containerEl, myButton);
-  }
-
-  // ... other methods
-}
-```
