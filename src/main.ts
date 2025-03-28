@@ -1,29 +1,5 @@
-import { App, Editor, MarkdownView, Modal, Notice, Plugin, PluginSettingTab, Setting, ItemView, WorkspaceLeaf } from 'obsidian';
-
-// 定义视图类型常量
-const VIBE_COMPONENTS_VIEW_TYPE = 'vibe-components-view';
-
-// 创建组件视图类
-class VibeComponentsView extends ItemView {
-    constructor(leaf: WorkspaceLeaf) {
-        super(leaf);
-    }
-
-    getViewType(): string {
-        return VIBE_COMPONENTS_VIEW_TYPE;
-    }
-
-    getDisplayText(): string {
-        return "Components";
-    }
-
-    async onOpen(): Promise<void> {
-        const container = this.containerEl.children[1];
-        container.empty();
-        container.createEl("h4", { text: "Vibe Components" });
-        container.createEl("div", { text: "这里将显示组件列表" });
-    }
-}
+import { App, Editor, MarkdownView, Modal, Notice, Plugin, PluginSettingTab, Setting, WorkspaceLeaf } from 'obsidian';
+import { VIBE_COMPONENTS_VIEW_TYPE, VibeComponentsView } from './view';
 
 interface VibeComponentsSettings {
 	mySetting: string;
@@ -73,8 +49,8 @@ export default class VibeComponents extends Plugin {
             return;
         }
 
-        // 否则创建新的视图
-        await workspace.getRightLeaf(false).setViewState({
+        // 在主工作区中打开视图，而不是侧边栏
+        await workspace.getLeaf(true).setViewState({
             type: VIBE_COMPONENTS_VIEW_TYPE,
             active: true,
         });
